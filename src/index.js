@@ -3,9 +3,11 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 
+const element = <h1>Hello you awesome, how are you doing today?</h1>;
+
 ReactDOM.render(
   // <React.StrictMode>
-  <h1>Hello my dear reader!</h1>,
+  element,
   // </React.StrictMode>,
   document.getElementById("root")
 );
