@@ -3,29 +3,19 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 
-function formatName(user) {
-  return user.firstName + " " + user.lastName;
-}
-
-const user = {
-  firstName: "Salvador",
-  lastName: "Oliveira",
-};
-
-function tick() {
-  const element = (
+const HelloComponent = function (props) {
+  return (
     <div>
-      <h1>Hello, {formatName(user)}!</h1>
-      <h2>It is {new Date().toLocaleTimeString()}.</h2>
+      <h1>Hello, dear component!</h1>
+      <h2>My name is {props.name}.</h2>
     </div>
   );
+};
 
-  ReactDOM.render(element, document.getElementById("root"));
-}
-
-setInterval(tick, 1000);
-
-// ReactDOM.render(element, document.getElementById("root"));
+ReactDOM.render(
+  <HelloComponent name="Salvador" />,
+  document.getElementById("root")
+);
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
