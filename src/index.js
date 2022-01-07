@@ -4,9 +4,9 @@ import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 
 ReactDOM.render(
-  <React.StrictMode>
-    <h1>Hello my dear reader!</h1>
-  </React.StrictMode>,
+  // <React.StrictMode>
+  <h1>Hello my dear reader!</h1>,
+  // </React.StrictMode>,
   document.getElementById("root")
 );
 
