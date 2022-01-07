@@ -3,12 +3,9 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 
-ReactDOM.render(
-  // <React.StrictMode>
-  <h1>Hello my dear reader!</h1>,
-  // </React.StrictMode>,
-  document.getElementById("root")
-);
+const element = <h1>Hello you awesome, how are you doing today?</h1>;
+
+ReactDOM.render(element, document.getElementById("root"));
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
