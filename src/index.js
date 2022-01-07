@@ -3,14 +3,25 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 
-const HelloComponent = function (props) {
-  return (
-    <div>
-      <h1>Hello, dear component!</h1>
-      <h2>My name is {props.name}.</h2>
-    </div>
-  );
-};
+class HelloComponent extends React.Component {
+  render() {
+    return (
+      <div>
+        <h1>Hello, dear component!</h1>
+        <h2>My name is {this.props.name}.</h2>
+      </div>
+    );
+  }
+}
+
+// const HelloComponent = function (props) {
+// return (
+//   <div>
+//     <h1>Hello, dear component!</h1>
+//     <h2>My name is {props.name}.</h2>
+//   </div>
+// );
+// };
 
 ReactDOM.render(
   <HelloComponent name="Salvador" />,
