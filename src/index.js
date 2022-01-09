@@ -32,6 +32,28 @@ class InputCounter extends React.Component {
     });
   }
 
+  componentDidMount() {
+    console.log("InputCounter mounted!");
+  }
+
+  componentWillUnmount() {
+    console.log("InputCounter unmounted!");
+  }
+
+  componentDidUpdate() {
+    console.log("InputCounter updated!");
+  }
+
+  shouldComponentUpdate(newProps, newState) {
+    console.log("Should InputCounter update?");
+    console.log(newProps, newState);
+
+    if (newState.text.length > 25) {
+      return false;
+    }
+    return true;
+  }
+
   render() {
     const text = "text" in this.state ? this.state.text : this.props.text;
     return (
