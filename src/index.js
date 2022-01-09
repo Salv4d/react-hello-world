@@ -16,17 +16,6 @@ class HelloComponent extends React.Component {
   }
 }
 
-// const HelloComponent = function (props) {
-//   return (
-//     <div>
-//       <h1>Hello, dear component!</h1>
-//       <h2>
-//         My name is {props.name}. I'm a {props.role}
-//       </h2>
-//     </div>
-//   );
-// };
-
 HelloComponent.defaultProps = {
   role: "Software Developer",
 };
