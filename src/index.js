@@ -19,25 +19,36 @@ const data = [
 ];
 
 class Table extends React.Component {
+  constructor(props) {
+    super();
+    this.state = { data: props.initialData };
+  }
   render() {
-    const headers = [];
-
-    for (const header of this.props.headers) {
-      headers.push(<th>{header}</th>);
-    }
-
     return (
       <table>
         <thead>
-          <tr>{headers}</tr>
+          <tr>
+            {this.props.headers.map((header, idx) => (
+              <th key={idx}>{header}</th>
+            ))}
+          </tr>
         </thead>
+        <tbody>
+          {this.state.data.map((row, idx) => (
+            <tr key={idx}>
+              {row.map((cell, idx) => (
+                <td key={idx}>{cell}</td>
+              ))}
+            </tr>
+          ))}
+        </tbody>
       </table>
     );
   }
 }
 
 ReactDOM.render(
-  <Table headers={headers}></Table>,
+  <Table headers={headers} initialData={data}></Table>,
   document.getElementById("root")
 );
 
