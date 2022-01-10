@@ -23,26 +23,34 @@ class Table extends React.Component {
     super();
     this.state = { data: props.initialData };
   }
+
+  secretFunction() {
+    console.log("Who, you found me!");
+  }
+
   render() {
     return (
-      <table>
-        <thead>
-          <tr>
-            {this.props.headers.map((header, idx) => (
-              <th key={idx}>{header}</th>
-            ))}
-          </tr>
-        </thead>
-        <tbody>
-          {this.state.data.map((row, idx) => (
-            <tr key={idx}>
-              {row.map((cell, idx) => (
-                <td key={idx}>{cell}</td>
+      <div>
+        <table>
+          <thead>
+            <tr>
+              {this.props.headers.map((header, idx) => (
+                <th key={idx}>{header}</th>
               ))}
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {this.state.data.map((row, idx) => (
+              <tr key={idx}>
+                {row.map((cell, idx) => (
+                  <td key={idx}>{cell}</td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+        <button onClick={this.secretFunction}>What do I do?</button>
+      </div>
     );
   }
 }
