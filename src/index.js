@@ -3,7 +3,43 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 
-ReactDOM.render(document.getElementById("root"));
+const headers = ["Album", "Artist", "Year"];
+
+const data = [
+  ["Nevermind", "Nirvana", "1991"],
+  ["Wish You Were Here", "Pink Floyd", "1975"],
+  ["Abbey Road", "The Beatles", "1969"],
+  ["OK Computer", "Radiohead", "1997"],
+  ["Led Zeppelin IV", "Led Zeppelin", "1971"],
+  ["Is This It", "The Strokes", "2001"],
+  ["Appetite for Destruction", "Guns N' Roses", "1987"],
+  ["A Night at the Opera", "Queen", "1975"],
+  ["Hotel California", "Eagles", "1976"],
+  ["Pet Sounds", "The Beach Boys", "1966"],
+];
+
+class Table extends React.Component {
+  render() {
+    const headers = [];
+
+    for (const header of this.props.headers) {
+      headers.push(<th>{header}</th>);
+    }
+
+    return (
+      <table>
+        <thead>
+          <tr>{headers}</tr>
+        </thead>
+      </table>
+    );
+  }
+}
+
+ReactDOM.render(
+  <Table headers={headers}></Table>,
+  document.getElementById("root")
+);
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
