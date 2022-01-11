@@ -60,7 +60,7 @@ class Table extends React.Component {
       return (
         <div>
           <h1>Where did all the data go?</h1>
-          <button onClick={this.secretFunction}>What do I do?</button>
+          <button onClick={this.secretFunction}>Bring the table back</button>
         </div>
       );
     }
@@ -68,7 +68,7 @@ class Table extends React.Component {
 }
 
 ReactDOM.render(
-  <Table headers={headers} initialData={data}></Table>,
+  <Table headers={headers} initialData={data} showTable={true}></Table>,
   document.getElementById("root")
 );
 
