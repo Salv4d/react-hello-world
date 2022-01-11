@@ -49,7 +49,7 @@ class Table extends React.Component {
             ))}
           </tbody>
         </table>
-        <button onClick={this.secretFunction.bind(this, "You found me! haha")}>
+        <button onClick={() => this.secretFunction("You found me! haha")}>
           What do I do?
         </button>
       </div>
