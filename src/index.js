@@ -24,8 +24,8 @@ class Table extends React.Component {
     this.state = { data: props.initialData };
   }
 
-  secretFunction() {
-    console.log("Who, you found me!");
+  secretFunction(message) {
+    console.log(message);
   }
 
   render() {
@@ -49,7 +49,9 @@ class Table extends React.Component {
             ))}
           </tbody>
         </table>
-        <button onClick={this.secretFunction}>What do I do?</button>
+        <button onClick={this.secretFunction.bind(this, "You found me! haha")}>
+          What do I do?
+        </button>
       </div>
     );
   }
