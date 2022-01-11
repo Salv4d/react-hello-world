@@ -20,40 +20,50 @@ const data = [
 
 class Table extends React.Component {
   constructor(props) {
-    super();
-    this.state = { data: props.initialData };
+    super(props);
+    this.state = { data: props.initialData, showTable: props.showTable };
+    this.secretFunction = this.secretFunction.bind(this);
   }
 
-  secretFunction(message) {
-    console.log(message);
+  secretFunction() {
+    this.state.showTable
+      ? this.setState({ showTable: false })
+      : this.setState({ showTable: true });
   }
 
   render() {
-    return (
-      <div>
-        <table>
-          <thead>
-            <tr>
-              {this.props.headers.map((header, idx) => (
-                <th key={idx}>{header}</th>
-              ))}
-            </tr>
-          </thead>
-          <tbody>
-            {this.state.data.map((row, idx) => (
-              <tr key={idx}>
-                {row.map((cell, idx) => (
-                  <td key={idx}>{cell}</td>
+    if (this.state.showTable) {
+      return (
+        <div>
+          <table>
+            <thead>
+              <tr>
+                {this.props.headers.map((header, idx) => (
+                  <th key={idx}>{header}</th>
                 ))}
               </tr>
-            ))}
-          </tbody>
-        </table>
-        <button onClick={() => this.secretFunction("You found me! haha")}>
-          What do I do?
-        </button>
-      </div>
-    );
+            </thead>
+            <tbody>
+              {this.state.data.map((row, idx) => (
+                <tr key={idx}>
+                  {row.map((cell, idx) => (
+                    <td key={idx}>{cell}</td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+          <button onClick={this.secretFunction}>What do I do?</button>
+        </div>
+      );
+    } else {
+      return (
+        <div>
+          <h1>Where did all the data go?</h1>
+          <button onClick={this.secretFunction}>What do I do?</button>
+        </div>
+      );
+    }
   }
 }
 
